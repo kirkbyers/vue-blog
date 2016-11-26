@@ -1,0 +1,21 @@
+{
+  "name": "v-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config configs/webpack.dev.js --port 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kirk Byers",
+  "license": "ISC",
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
