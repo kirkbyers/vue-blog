@@ -1,4 +1,5 @@
 const _firebase = require('firebase/app');
+const _firebaseui = require('firebaseui');
 const _vue = require('vue');
 const _vuefire = require('vuefire');
 require('firebase/database');
