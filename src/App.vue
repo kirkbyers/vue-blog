@@ -3,7 +3,7 @@
     <h1>A Stream of Consciousness</h1>
     <h2>A simple blog built on Vue.js and Firebase</h2>
     <hr>
-    <blog-posts></blog-posts>
+    <router-view></router-view>
   </div>
 </template>
 
