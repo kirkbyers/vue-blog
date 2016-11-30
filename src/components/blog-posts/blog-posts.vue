@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import firebase from '../services/firebase';
+import firebase from '../../services/firebase';
 import BlogPostComponent from './blog-post.vue'
 
 const db = firebase.database();

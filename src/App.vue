@@ -1,25 +1,14 @@
 <template>
   <div id="app">
-    <h1>A Stream of Consciousness</h1>
-    <h2>A simple blog built on Vue.js and Firebase</h2>
-    <hr>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import BlogPostsComponent from './components/blog-posts.vue';
+import BlogPostsComponent from './components/blog-posts/blog-posts.vue';
 
 export default {
   name: 'app',
-  components: {
-    'blog-posts': BlogPostsComponent
-  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
 }
 </script>
 
@@ -30,7 +19,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 h1, h2 {
