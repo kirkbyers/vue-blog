@@ -27,7 +27,6 @@ export default {
     },
     methods: {
         submitLogin: function (event) {
-            console.log(this.username, this.pass);
             firebase
                 .auth()
                 .signInWithEmailAndPassword(this.username, this.pass)

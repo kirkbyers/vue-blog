@@ -3,17 +3,19 @@ import BlogPostsComponent from './components/blog-posts/blog-posts.vue';
 import LoginComponent from './components/login/login.vue';
 import AdminComponent from './components/admin/admin.vue';
 
+import authGaurd from './services/auth-gaurd';
+
 import App from './App.vue';
 
 const routes = [
     {
         path: '/',
-        name: 'home',
+        name: '',
         component: PublicAppComponent,
         children: [
             {
                 path: '',
-                name: 'blog-posts',
+                name: 'home',
                 component:BlogPostsComponent
             }
         ]
@@ -26,7 +28,8 @@ const routes = [
     {
         path: '/admin',
         name: 'admin',
-        component: AdminComponent
+        component: AdminComponent,
+        beforeEnter: authGaurd
     },
     {
         path: '/draftedit/:draftId',
