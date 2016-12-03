@@ -1,7 +1,10 @@
+import VueRouter from 'vue-router';
+
 import PublicAppComponent from './components/public-app/public-app.vue';
 import BlogPostsComponent from './components/blog-posts/blog-posts.vue';
 import LoginComponent from './components/login/login.vue';
 import AdminComponent from './components/admin/admin.vue';
+import DraftEditComponent from './components/draft-edit/draft-edit.vue';
 
 import authGaurd from './services/auth-gaurd';
 
@@ -33,7 +36,9 @@ const routes = [
     },
     {
         path: '/draftedit/:draftId',
-        name: 'draftEdit'
+        name: 'draftEdit',
+        component: DraftEditComponent,
+        beforeEnter: authGaurd
     },
     {
         path: '/postedit/:postId',
@@ -41,5 +46,8 @@ const routes = [
     }
 ];
 
+const router = new VueRouter({
+    routes
+});
 
-export default routes;
+export default router;
