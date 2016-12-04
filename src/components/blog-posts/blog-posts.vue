@@ -1,12 +1,12 @@
 <template>
     <div id="blog-posts">
-        <blog-post v-for="post in blogPosts" v-bind:title="post.title" v-bind:content="post.content"></blog-post>
+        <blog-post v-for="post in reversedBlogPosts" v-bind:title="post.title" v-bind:content="post.content"></blog-post>
     </div>
 </template>
 
 <script>
 import firebase from '../../services/firebase';
-import BlogPostComponent from './blog-post.vue'
+import BlogPostComponent from '../shared/blog-post.vue'
 
 const db = firebase.database();
 
@@ -17,6 +17,11 @@ export default {
     },
     firebase: {
         blogPosts: db.ref('/posts')
+    },
+    computed: {
+        reversedBlogPosts () {
+            return this.blogPosts.reverse()
+        }
     }
 }
 </script>

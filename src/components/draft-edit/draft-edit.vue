@@ -4,6 +4,7 @@
         <textarea name="" id="" cols="30" rows="10" v-model="draft.content"></textarea>
         <button v-on:click="updateDraft(draft)">Save</button>
         <button v-on:click="publishDraft(draft)">Publish</button>
+        <button v-on:click="deleteDraft(draft)">Delete</button>
     </div>
 </template>
 
