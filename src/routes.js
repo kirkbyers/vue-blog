@@ -2,6 +2,7 @@ import VueRouter from 'vue-router';
 
 import PublicAppComponent from './components/public-app/public-app.vue';
 import BlogPostsComponent from './components/blog-posts/blog-posts.vue';
+import BlogPostComponet from './components/blog-posts/blog-post.vue'
 import LoginComponent from './components/login/login.vue';
 import AdminComponent from './components/admin/admin.vue';
 import DraftEditComponent from './components/draft-edit/draft-edit.vue';
@@ -43,6 +44,11 @@ const routes = [
     {
         path: '/postedit/:postId',
         name: 'postEdit'
+    },
+    {
+        path: '/post/:postId',
+        name: 'post-details',
+        component: BlogPostComponet
     }
 ];
 

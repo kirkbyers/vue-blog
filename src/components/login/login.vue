@@ -30,7 +30,9 @@ export default {
             firebase
                 .auth()
                 .signInWithEmailAndPassword(this.username, this.pass)
-                .then((res) => console.log(res));
+                .then((res) => {
+                    this.$router.push('/admin');
+                });
         }
     }
 }

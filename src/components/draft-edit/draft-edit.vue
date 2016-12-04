@@ -3,6 +3,7 @@
         <input type="text" v-model="draft.title">
         <textarea name="" id="" cols="30" rows="10" v-model="draft.content"></textarea>
         <button v-on:click="updateDraft(draft)">Save</button>
+        <button v-on:click="publishDraft(draft)">Publish</button>
     </div>
 </template>
 
@@ -43,7 +44,18 @@ export default {
             const routeParams = this.$route.params;
             this.$router.push(`/draftedit/${routeParams.draftId}`)
         },
-        publishDraft () {}
+        publishDraft (draft) {
+            const tempDraft = Object.assign({}, draft);
+            const routeParams = this.$route.params;
+            delete tempDraft['.key'];
+            this.$firebaseRefs.drafts.child(draft['.key']).remove();
+            this.$firebaseRefs.posts.push(tempDraft);
+            this.$router.push(`/post/${this.$firebaseRefs.posts.length - 1}`);
+        },
+        deleteDraft (draft) {
+            this.$firebaseRefs.drafts.child(draft['.key']).remove();
+            this.$router.push('/admin');
+        }
     },
     watch: {
         '$route': 'fetchDraft'
